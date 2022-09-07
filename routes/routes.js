@@ -1,6 +1,14 @@
 const Routes = (pricePlans, pricePlansDb) => {
     const getHome = async (req, res) => {
-        res.send('I am home my nigga')
+        res.render('index', {
+
+        })
+    }
+
+    const postPricePlan = async (req, res) => {
+        console.log(req.body)
+        res.render('index')
+
     }
 
     const postCalcBill = async (req, res) => {
@@ -12,10 +20,16 @@ const Routes = (pricePlans, pricePlansDb) => {
     }
 
     const getLinkedUser = (req, res) => {
+        console.log(req.body)
+        res.render('priceplans', {
+
+        })
 
     }
-    const postLinkedUser = (req, res) => {
-
+    const postLinkedUser = async (req, res) => {
+        const { name, plan } = req.body
+        await pricePlansDb.insertUser(name, plan)
+        res.redirect(`/price_plans/${name}`)
     }
 
     return {
@@ -23,7 +37,8 @@ const Routes = (pricePlans, pricePlansDb) => {
         postCalcBill,
         getPricePlans,
         getLinkedUser,
-        postLinkedUser
+        postLinkedUser,
+        postPricePlan
     }
 }
 

@@ -5,17 +5,34 @@
     <meta charset="UTF-8">
     <title>Settings Bill/Price Plan</title>
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/schedule.css" />
-    <link rel="stylesheet" href="/nav.css" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     </body>
 </head>
 
 <body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="/">
+                    <span class="w">Home</span>
+                </a>
+            </div>
+            <div class="nav-content">
+                <a href="/price_plans">
+                    <h3 class="nav-title">Price Plan</h3>
+                </a>
+                <a href="/link_user">
+                    <h3 class="nav-title">Link Users</h3>
+                </a>
+            </div>
+        </div>
+    </header>
     <div class="container">
-        {{{body}}}
+        <div class="container">
+            {{{body}}}
+        </div>
     </div>
-    </div>
-    <script src="../../error.js"></script>
+    {{!--
+    <script src="../../error.js"></script> --}}
 
 </html>

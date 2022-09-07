@@ -24,6 +24,7 @@ const config = {
 const app = express()
 const db = pgp(config)
 
+app.use(express.static('public'))
 app.set('view engine', 'hbs')
 app.engine('hbs', handlebars.engine({
     layoutsDir: `./views/layouts`,
@@ -43,6 +44,7 @@ app.use(cors())
 
 app.get('/', routes.getHome)
 app.post('/calc_bil', routes.postCalcBill)
+app.get('/price_plans/:id', routes.postPricePlan)
 app.get('/price_plans', routes.getPricePlans)
 app.get('/link_user', routes.getLinkedUser)
 app.post('/link_user', routes.postLinkedUser)
