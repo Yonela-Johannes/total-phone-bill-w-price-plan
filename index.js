@@ -24,6 +24,16 @@ const config = {
 const app = express()
 const db = pgp(config)
 
+app.set('view engine', 'hbs')
+app.engine('hbs', handlebars.engine({
+    layoutsDir: `./views/layouts`,
+    extname: 'hbs',
+    defaultLayout: 'main',
+}))
+
+
+
+
 const pricePlans = PricePlans()
 const pricePlansDb = PricePlansDb(db)
 const routes = Routes(pricePlans, pricePlansDb)
