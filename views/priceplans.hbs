@@ -1,22 +1,20 @@
 <div class="main-container">
     <div class="main-wrapper">
-        <p>Phone Bill Widget</p>
+        <p class="title">Phone Bill</p>
         <div>
-            <p>Calculate total Phone bill for user</p>
-            <form action="/link_user" method="Post">
-                <div>
-                    <lable for="name">Username</lable>
-                    <input type="name" value="" name="name" />
+            <p class="subtitle">Calculate total Phone bill for user</p>
+            <form action="price_pa" method="Post">
+                <div class="middle-container">
+                    <p class="name-label" for="name">name: </p>
+                    <input class="name" type="name" value="" name="name" placeholder="Enter your name" />
                 </div>
-                <div>
-                    <select title="select plan" type="text" name="plan">
-                        <option name="plan" class="plan" value="SMS 100">SMS 100</option>
-                        <option name="plan" class="plan" value="SMS 200">SMS 200</option>
-                        <option name="plan" class="plan" value="Call Weekly">Call Weekly</option>
-                    </select>
+                <div class="middle-container">
+                    <p class="name-label" for="name">coverage: </p>
+                    <input class="coverage" type="name" value="" name="name" placeholder="Enter coverage" />
                 </div>
-                <button type="submit">Submit</button>
+                <button class="submit-button" type="submit">Calculate Bill</button>
             </form>
         </div>
+
     </div>
 </div>
