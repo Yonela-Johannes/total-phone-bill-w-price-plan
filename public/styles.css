@@ -206,3 +206,33 @@ select:focus{
     padding: 5px 10px;
     color: white;
 }
+.users-container{
+    display: flex;
+    flex-direction: column;
+    /* font-weight: bold; */
+}
+.username {
+    color: rgb(158, 158, 158);
+    text-transform: capitalize;
+    padding: 8px 3px;
+    width: min-content;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    transition: .2s ease;
+}
+
+.username:hover{
+    color: white;
+    border-bottom: 1px solid white;
+}
+table{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+table, th, td {
+  border: 1px solid rgb(141, 141, 141);
+  padding: 5px;
+}
+table {
+  border-collapse: collapse;
+}

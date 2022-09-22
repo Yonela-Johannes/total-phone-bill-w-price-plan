@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({ extended: false }), bodyParser.json())
 app.use(cors())
 
 app.get('/', routes.getHome)
-app.post('/calc_bil', routes.postCalcBill)
+app.post('/calc_bill', routes.postCalcBill)
 app.get('/price_plan/:id', routes.getPricePlan)
 app.get('/price_plans', routes.getPricePlans)
 app.get('/link_user', routes.getLinkedUser)

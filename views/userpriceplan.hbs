@@ -2,9 +2,41 @@
     <div class="main-wrapper">
         <p class="title">Plan Details</p>
         <div>
-            {{#user}}
-            {{username}}{{plan_name}}{{sms_price}}{{call_price}}
-            {{/user}}
+            <table>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Plan
+                    </th>
+                    <th>
+                        Sms
+                    </th>
+                    <th>
+                        Call
+                    </th>
+                </tr>
+                {{#user}}
+                <tr>
+                    <td>
+                        {{username}}
+                    </td>
+                    <td>
+                        {{plan_name}}
+                    </td>
+                    <td>
+                        {{sms_price}}
+                    </td>
+                    <td>
+                        {{call_price}}
+                    </td>
+                    {{/user}}
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
         </div>
     </div>
 </div>

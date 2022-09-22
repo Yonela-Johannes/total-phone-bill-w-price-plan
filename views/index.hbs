@@ -1,22 +1,23 @@
 <div class="main-container">
     <div class="main-wrapper">
+        <p class="message">{{message}}</p>
         <p class="title">Phone Bill</p>
         <div>
             <p class="subtitle">Calculate total Phone bill for user</p>
-            <form action="price_pa" method="Post">
+            <form action="/calc_bill" method="Post">
                 <div class="middle-container">
                     <p class="name-label" for="name">name: </p>
                     <input class="name" type="name" value="" name="name" placeholder="Enter your name" />
                 </div>
                 <div class="middle-container">
                     <p class="name-label" for="name">coverage: </p>
-                    <input class="coverage" type="name" value="" name="name" placeholder="Enter coverage" />
+                    <input class="coverage" type="name" value="" name="coverage" placeholder="Enter coverage" />
                 </div>
                 <button class="submit-button" type="submit">Calculate Bill</button>
             </form>
         </div>
         <div class="result">
-            <p>R200</p>
+            <p>R {{result}}</p>
         </div>
     </div>
 </div>
