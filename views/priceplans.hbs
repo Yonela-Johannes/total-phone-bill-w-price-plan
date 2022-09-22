@@ -2,19 +2,11 @@
     <div class="main-wrapper">
         <p class="title">Phone Bill</p>
         <div>
-            <p class="subtitle">Calculate total Phone bill for user</p>
-            <form action="price_pa" method="Post">
-                <div class="middle-container">
-                    <p class="name-label" for="name">name: </p>
-                    <input class="name" type="name" value="" name="name" placeholder="Enter your name" />
-                </div>
-                <div class="middle-container">
-                    <p class="name-label" for="name">coverage: </p>
-                    <input class="coverage" type="name" value="" name="name" placeholder="Enter coverage" />
-                </div>
-                <button class="submit-button" type="submit">Calculate Bill</button>
-            </form>
+            {{#each users}}
+            <a href="/price_plan/{{username}}">
+                {{username}}
+            </a>
+            {{/each}}
         </div>
-
     </div>
 </div>

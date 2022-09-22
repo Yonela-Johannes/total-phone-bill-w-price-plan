@@ -45,7 +45,14 @@ header {
 .title{
     color: white;
     font-size: 30px;
-    margin: 30px 0;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.message{
+    height: 20px;
+    font-size: 8;
+    color: red;
 }
 input.name{
     border-bottom: .1px solid black;
@@ -59,8 +66,6 @@ input.name{
 input.coverage{
     border-bottom: .1px solid black;
     padding: 5px 10px;
-    /* margin: 15px 0; */
-    /* margin-left: 10px; */
     outline: .2px solid rgb(0, 0, 0);
     width: 180px;
 }
@@ -82,8 +87,11 @@ input:focus{
 .main-wrapper{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     background-color: #323330;
     padding: 50px 80px;
+    width: 500px;
+    min-height: 360px;
 }
 
 .logo a {
@@ -175,4 +183,26 @@ select:focus{
 .name-label{
     color: gray;
     font-weight: bold;
+}
+
+.success{
+    color: green
+}
+
+.danger{
+    color: red;
+}
+.hide{
+    display: none;
+}
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(116, 116, 116);
+    height: 30px;
+    width: 180px;
+    align-self: flex-end;
+    padding: 5px 10px;
+    color: white;
 }

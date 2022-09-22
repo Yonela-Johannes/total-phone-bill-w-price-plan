@@ -1,13 +1,25 @@
 const Routes = (pricePlans, pricePlansDb) => {
     const getHome = async (req, res) => {
-        res.render('priceplans', {
+        res.render('index', {
 
         })
     }
 
-    const postPricePlan = async (req, res) => {
-        console.log(req.body)
-        res.render('priceplans')
+    const postLinkedUser = async (req, res) => {
+        const { name, plans } = req.body
+        pricePlans.setName(name)
+        pricePlans.setPricePlan(plans)
+
+        const username = pricePlans.getName()
+        const planId = pricePlans.getPricePlan()
+        if (planId !== undefined && username) {
+            await pricePlansDb.insertPlan(username, planId)
+        }
+        const pricePlan = await pricePlansDb.getPlans()
+        res.render('linkUser', {
+            pricePlan,
+            message: pricePlans.responseHandler(),
+        })
 
     }
 
@@ -15,19 +27,28 @@ const Routes = (pricePlans, pricePlansDb) => {
 
     }
 
-    const getPricePlans = (req, res) => {
-        res.render('index')
+    const getLinkedUser = async (req, res) => {
+        const pricePlan = await pricePlansDb.getPlans()
+        res.render('linkUser', {
+            pricePlan
+        }
+        )
     }
 
-    const getLinkedUser = (req, res) => {
-        console.log(req.body)
-        res.render('priceplans')
+    const getPricePlans = async (req, res) => {
+        const users = await pricePlansDb.getUsersPicePlans()
+        res.render('priceplans', {
+            users,
+        })
 
     }
-    const postLinkedUser = async (req, res) => {
-        const { name, plan } = req.body
-        await pricePlansDb.insertUser(name, plan)
-        res.redirect(`/price_plans/${name}`)
+    const getPricePlan = async (req, res) => {
+        const { id } = req.params
+        const user = await pricePlansDb.getUserByName(id)
+        console.log(user)
+        res.render('userpriceplan', {
+            user
+        })
     }
 
     return {
@@ -36,7 +57,7 @@ const Routes = (pricePlans, pricePlansDb) => {
         getPricePlans,
         getLinkedUser,
         postLinkedUser,
-        postPricePlan
+        getPricePlan
     }
 }
 

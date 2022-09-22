@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div class="main-wrapper">
+        <p class="message">{{message}}</p>
+        <p class="title">Price Plan</p>
+        <div>
+            <p class="subtitle">Choose Price Plan</p>
+            <form action="/link_user" method="Post">
+                <div class="middle-container">
+                    <p class="name-label" for="name">name: </p>
+                    <input class="name" type="name" value="" name="name" placeholder="Enter your name" />
+                </div>
+                <div>
+                    <select title="Select Price Plan" type="text" name="plans">
+                        <option disabled name="plan" value="Select Price Plan" selected>Select Price Plan</option>
+                        {{#each pricePlan}}
+                        <option name="plan" class="plan" value="{{id}}">{{plan_name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button class="submit-button" type="submit">Submit Plan</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="message.js"></script>

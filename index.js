@@ -44,13 +44,13 @@ app.use(cors())
 
 app.get('/', routes.getHome)
 app.post('/calc_bil', routes.postCalcBill)
-app.get('/price_plans/:id', routes.postPricePlan)
+app.get('/price_plan/:id', routes.getPricePlan)
 app.get('/price_plans', routes.getPricePlans)
 app.get('/link_user', routes.getLinkedUser)
 app.post('/link_user', routes.postLinkedUser)
 
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 // displaying server in localhost
 app.listen(port, () => {
     console.log('Your app is running on port: ', port)

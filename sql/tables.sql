@@ -11,3 +11,8 @@ CREATE TABLE IF NOT EXISTS users(
     price_plan_id INT,
     FOREIGN KEY(price_plan_id) REFERENCES Price_plan(ID) ON DELETE CASCADE
 );
+
+INSERT INTO price_plan (plan_name, sms_price, call_price) VALUES 
+('sms100', 0.20, 2.35),
+('call100', 0.45, 1.75),
+('text-me', 0.17, 1.54)

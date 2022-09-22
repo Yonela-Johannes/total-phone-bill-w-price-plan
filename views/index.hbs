@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="main-wrapper">
-        <p class="title">Price Plan</p>
+        <p class="title">Phone Bill</p>
         <div>
             <p class="subtitle">Calculate total Phone bill for user</p>
             <form action="price_pa" method="Post">
@@ -8,16 +8,15 @@
                     <p class="name-label" for="name">name: </p>
                     <input class="name" type="name" value="" name="name" placeholder="Enter your name" />
                 </div>
-                <div>
-                    <select>
-                        <option name="plan" class="plan" value="SMS 100">SMS 100</option>
-                        <option name="plan" class="plan" value="SMS 200">SMS 200</option>
-                        <option name="plan" class="plan" value="Call Weekly">Call Weekly</option>
-                    </select>
+                <div class="middle-container">
+                    <p class="name-label" for="name">coverage: </p>
+                    <input class="coverage" type="name" value="" name="name" placeholder="Enter coverage" />
                 </div>
-                <button class="submit-button" type="submit">Submit Plan</button>
+                <button class="submit-button" type="submit">Calculate Bill</button>
             </form>
         </div>
-
+        <div class="result">
+            <p>R200</p>
+        </div>
     </div>
 </div>
