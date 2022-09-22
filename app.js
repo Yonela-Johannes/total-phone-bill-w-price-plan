@@ -26,6 +26,11 @@ const PricePlans = () => {
     }
     const billHandler = (coverage, name) => {
         let message = ''
+        for (let x = 0; x < coverage.length; x++) {
+            if (coverage[x].trim() !== 'sms' || coverage[x].trim() !== 'call') {
+                message = 'Invalid coverage input!'
+            }
+        }
         if (!nameInput) {
             message = "Please enter your name!"
         }
@@ -50,6 +55,9 @@ const PricePlans = () => {
         let sms = 0
         let coverage = numCoverage.split(',')
         for (let x = 0; x < coverage.length; x++) {
+            if (coverage[x].trim() == 'sms' || coverage[x].trim() == 'call') {
+                return
+            }
             if (coverage[x].trim() == 'sms') {
                 call += parseFloat(plan.sms_price)
             }
