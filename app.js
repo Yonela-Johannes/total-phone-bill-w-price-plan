@@ -32,7 +32,7 @@ const PricePlans = () => {
         else if (!coverage) {
             message = 'Please enter coverage!'
         }
-        else if (name == false) {
+        else if (name == false || name == undefined) {
             message = 'You do not have a price plan'
         }
         else if (nameInput.length <= 4) {
@@ -42,7 +42,7 @@ const PricePlans = () => {
     }
 
     const calc_bill = (plan, totalCoverage) => {
-        if (plan == false) {
+        if (plan == false || plan == undefined) {
             return
         }
         let bill = 0

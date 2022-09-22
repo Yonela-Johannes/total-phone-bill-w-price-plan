@@ -15,16 +15,9 @@ const pricePlanDb = PricePlanDb(db)
 
 describe('Registration Test', () => {
     beforeEach(async () => {
-        // await waitersDb.deleteWaiters()
-        // await waitersDb.resetDays()
     })
     describe("Login", () => {
         it('should store and fetch name from database', async () => {
-            // const username = 'Yonela'
-            // await waitersDb.storeName(username)
-            // const getWaiter = await waitersDb.getUser(username)
-            // const { name } = getWaiter
-            // assert.equal('Yonela', name)
         })
     });
 
