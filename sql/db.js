@@ -7,7 +7,6 @@ const PricePlansDb = (db) => {
         return await db.manyOrNone('SELECT * FROM price_plan')
     }
     const insertPlan = async (username, planId) => {
-        console.log(username, planId)
         await db.none('INSERT INTO users (username, price_plan_id) VALUES ($1, $2)', [username, planId])
     }
     const getUsersPicePlans = async () => {

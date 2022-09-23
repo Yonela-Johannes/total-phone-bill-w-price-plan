@@ -49,7 +49,6 @@ app.get('/price_plans', routes.getPricePlans)
 app.get('/link_user', routes.getLinkedUser)
 app.post('/link_user', routes.postLinkedUser)
 
-
 const port = process.env.PORT || 5000
 // displaying server in localhost
 app.listen(port, () => {

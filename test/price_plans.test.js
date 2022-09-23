@@ -15,6 +15,7 @@ const pricePlanDb = PricePlanDb(db)
 
 describe('Price Planner w/ Total Phone Bill Test', () => {
     beforeEach(async () => {
+        await db.any('DELETE FROM users')
     })
     describe("Name Exist Fail Check", () => {
         it('should be able to check if name in database.', async () => {
@@ -25,11 +26,11 @@ describe('Price Planner w/ Total Phone Bill Test', () => {
     });
     describe("Name Exist", () => {
         it('should be able to check if name in database.', async () => {
-            const username = 'kokos'
-            await pricePlanDb.insertPlan(username, 3)
-            const pricePlan = await pricePlanDb.getPlans()
-            console.log(pricePlan)
-            // assert.equal(undefined, exist)
+            const name = 'kokos'
+            await pricePlanDb.insertPlan(name, 3)
+            const [users] = await pricePlanDb.getUsersPicePlans()
+            const { username } = users
+            assert.equal(name, username)
         })
     });
 

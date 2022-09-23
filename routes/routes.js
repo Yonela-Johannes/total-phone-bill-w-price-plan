@@ -29,7 +29,6 @@ const Routes = (pricePlans, pricePlansDb) => {
         const { name, plans } = req.body
         pricePlans.setName(name)
         pricePlans.setPricePlan(plans)
-
         const username = pricePlans.getName()
         const planId = pricePlans.getPricePlan()
         if (planId !== undefined && username) {
