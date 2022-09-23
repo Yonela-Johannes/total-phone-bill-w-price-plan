@@ -13,11 +13,12 @@ const db = pgp(config)
 const pricePlanDb = PricePlanDb(db)
 
 
-describe('Registration Test', () => {
+describe('Price Planner w/ Total Phone Bill Test', () => {
     beforeEach(async () => {
     })
     describe("Login", () => {
         it('should store and fetch name from database', async () => {
+            
         })
     });
 

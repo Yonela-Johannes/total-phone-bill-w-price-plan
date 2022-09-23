@@ -10,7 +10,6 @@ const Routes = (pricePlans, pricePlansDb) => {
         pricePlans.setName(name)
         pricePlans.setCoverage(coverage)
         const username = pricePlans.getName()
-        console.log(username)
         let validName = ''
         if (name) {
             validName = await pricePlansDb.getUserByName(username)
@@ -19,8 +18,7 @@ const Routes = (pricePlans, pricePlansDb) => {
             validName = false
         }
         const totalCoverage = pricePlans.getCoverage()
-        const result = pricePlans.calc_bill(validName)
-        console.log(result)
+        const result = pricePlans.calc_bill(validName, totalCoverage)
         res.render('index', {
             result: result ? result : '0.00',
             message: pricePlans.billHandler(coverage, validName),
@@ -63,7 +61,6 @@ const Routes = (pricePlans, pricePlansDb) => {
     const getPricePlan = async (req, res) => {
         const { id } = req.params
         const user = await pricePlansDb.getUserByName(id)
-        console.log(user)
         res.render('userpriceplan', {
             user
         })
