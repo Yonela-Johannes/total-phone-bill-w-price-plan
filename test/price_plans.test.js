@@ -33,5 +33,40 @@ describe('Price Planner w/ Total Phone Bill Test', () => {
             assert.equal(name, username)
         })
     });
-
+    describe("Select Price Plan", () => {
+        it('should be able select price plan.', async () => {
+            const name = 'kokos'
+            const planId = 3
+            await pricePlanDb.insertPlan(name, planId)
+            const [users] = await pricePlanDb.getUsersPicePlans()
+            const { username } = users
+            const pricePlan = await pricePlanDb.getPlans()
+            assert.equal(planId, pricePlan[2].id)
+        })
+    });
+    describe("Get all Users", () => {
+        it('should be able to get all user.', async () => {
+            let name = 'kokos'
+            const planId = 3
+            await pricePlanDb.insertPlan(name, planId)
+            name = 'Cocos'
+            await pricePlanDb.insertPlan(name, planId)
+            const users = await pricePlanDb.getUsersPicePlans()
+            assert.deepEqual([{ username: 'kokos' }, { username: 'Cocos' }], users)
+        })
+    });
+    describe("Get User/plans", () => {
+        it('should be able to user and plans.', async () => {
+            let name = 'kokos'
+            const planId = 3
+            await pricePlanDb.insertPlan(name, planId)
+            name = 'Cocos'
+            await pricePlanDb.insertPlan(name, planId)
+            name = 'Chochos'
+            await pricePlanDb.insertPlan(name, planId)
+            const username = 'Cocos'
+            const user = await pricePlanDb.getUserByName(username)
+            assert.deepEqual({ username: 'Cocos', plan_name: 'text-me', sms_price: '0.17', call_price: '1.54' }, user)
+        })
+    });
 })
