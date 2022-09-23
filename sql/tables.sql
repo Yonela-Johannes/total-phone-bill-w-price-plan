@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS price_plan(
     ID SERIAL PRIMARY KEY,
     plan_name VARCHAR(10) NOT NULL,

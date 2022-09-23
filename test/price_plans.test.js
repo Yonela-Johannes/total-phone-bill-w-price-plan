@@ -16,11 +16,21 @@ const pricePlanDb = PricePlanDb(db)
 describe('Price Planner w/ Total Phone Bill Test', () => {
     beforeEach(async () => {
     })
-    describe("Login", () => {
-        it('should store and fetch name from database', async () => {
-            
+    describe("Name Exist Fail Check", () => {
+        it('should be able to check if name in database.', async () => {
+            const username = 'yonela'
+            const exist = await pricePlanDb.getUserByName(username)
+            assert.equal(undefined, exist)
         })
     });
-
+    describe("Name Exist", () => {
+        it('should be able to check if name in database.', async () => {
+            const username = 'kokos'
+            await pricePlanDb.insertPlan(username, 3)
+            const pricePlan = await pricePlanDb.getPlans()
+            console.log(pricePlan)
+            // assert.equal(undefined, exist)
+        })
+    });
 
 })
