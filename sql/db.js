@@ -7,7 +7,12 @@ const PricePlansDb = (db) => {
         return await db.manyOrNone('SELECT * FROM price_plan')
     }
     const insertPlan = async (username, planId) => {
-        await db.none('INSERT INTO users (username, price_plan_id) VALUES ($1, $2)', [username, planId])
+        const existUser = await getUserByName(username)
+        if (existUser?.username.toLowerCase() === username.toLowerCase()) {
+            await db.none('UPDATE users SET price_plan_id = $2 WHERE username = $1', [username, planId])
+        } else {
+            await db.none('INSERT INTO users (username, price_plan_id) VALUES ($1, $2)', [username, planId])
+        }
     }
     const getUsersPicePlans = async () => {
         return db.manyOrNone('SELECT username FROM users')
